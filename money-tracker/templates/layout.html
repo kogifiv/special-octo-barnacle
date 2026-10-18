@@ -1,0 +1,24 @@
+{{define "layout"}}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Учёт трат</title>
+    <style>
+        body { font-family: sans-serif; margin: 30px; background: #fafafa; }
+        .box { background: white; padding: 20px; border: 1px solid #ccc; max-width: 500px; margin: 0 auto; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #aaa; padding: 8px; text-align: left; }
+        form { background: #eee; padding: 15px; margin-bottom: 20px; }
+        input { display: block; margin-bottom: 10px; width: 90%; padding: 5px; }
+        button { background: #007bff; color: white; border: none; padding: 8px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>Учёт личных трат</h2>
+        {{template "content" .}}
+    </div>
+</body>
+</html>
+{{end}}

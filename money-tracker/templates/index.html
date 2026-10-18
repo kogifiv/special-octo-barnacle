@@ -1,0 +1,29 @@
+{{define "content"}}
+    <h4>Добавить расход:</h4>
+    <form action="/add" method="POST">
+        <input type="number" name="amount" placeholder="Сумма денег" required>
+        <input type="text" name="description" placeholder="На что потратил" required>
+        <input type="date" name="date" required>
+        <button type="submit">Добавить в базу</button>
+    </form>
+
+    <h4>История моих трат:</h4>
+    <table>
+        <tr>
+            <th>Дата</th>
+            <th>Сколько</th>
+            <th>Описание</th>
+        </tr>
+        {{range .}}
+        <tr>
+            <td>{{.Date}}</td>
+            <td>{{.Amount}} руб.</td>
+            <td>{{.Description}}</td>
+        </tr>
+        {{else}}
+        <tr>
+            <td colspan="3" style="text-align: center;">Трат в базе пока нет!</td>
+        </tr>
+        {{end}}
+    </table>
+{{end}}
